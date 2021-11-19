@@ -14,6 +14,11 @@ import java.util.List;
         @Insert
         void insertrecord(User... users);
 
+        @Query("SELECT EXISTS(SELECT * FROM User WHERE uid = :UserId)")
+        Boolean is_exist(int UserId);
+
+      
+
 
     }
 

@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText first_name,name2;
+    EditText first_name,name2,serial_no;
     Button button;
 
     @Override
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         first_name  = findViewById(R.id.first_name);
         name2 = findViewById(R.id.name2);
+        serial_no = findViewById(R.id.serial_no);
         button = findViewById(R.id.button);
 
 
@@ -37,28 +38,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        new bgThred().start();
-        Toast.makeText(MainActivity.this,"Insert Succsessfully",Toast.LENGTH_SHORT).show();
+          AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"room_db").allowMainThreadQueries().build();
 
-    }
+          UserDao userDao = db.userDao();
+          Boolean check = userDao.is_exist(Integer.parseInt(serial_no.getText().toString()));
 
-    class  bgThred extends  Thread{
-          public void  run()
+          if(check==false)
           {
-              super.run();
-
-              AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                      AppDatabase.class, "room_db").build();
-
-              UserDao userDao = db.userDao();
-
-              userDao.insertrecord(new User(1,first_name.getText().toString(),name2.getText().toString()));
-
-
-
-
-
-
+              userDao.insertrecord(new User(Integer.parseInt(serial_no.getText().toString()),first_name.getText().toString(),name2.getText().toString()));
+              first_name.setText("");
+              name2.setText("");
+            //  serial_no.setText("");
+              Toast.makeText(MainActivity.this,"sucsess",Toast.LENGTH_SHORT).show();
           }
+          else
+          {
+              first_name.setText("");
+              name2.setText("");
+              serial_no.setText("");
+              Toast.makeText(MainActivity.this,"faiulre",Toast.LENGTH_SHORT).show();
+          }
+
+
     }
+
 }
