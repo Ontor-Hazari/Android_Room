@@ -17,6 +17,13 @@ import java.util.List;
         @Query("SELECT EXISTS(SELECT * FROM User WHERE uid = :UserId)")
         Boolean is_exist(int UserId);
 
+        @Query("SELECT * FROM User")
+    List<User> getAlluser();
+
+
+        @Query("DELETE FROM User WHERE uid = :id")
+            void deleteById(int id);
+
       
 
 
