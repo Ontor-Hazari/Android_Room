@@ -30,20 +30,13 @@ public class fatchdata extends AppCompatActivity {
 
     private void getdata() {
 
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"room_db").allowMainThreadQueries().build();
-
-        UserDao userDao = db.userDao();
-
-        List<User> users =  userDao.getAlluser();
 
 
 
 
 
-        myadpater adapter = new myadpater(users);
 
 
-        recycelerview.setAdapter(adapter);
 
 
 

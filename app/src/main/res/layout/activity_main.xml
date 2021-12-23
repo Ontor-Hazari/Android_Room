@@ -9,96 +9,87 @@
 
 
     <EditText
-        android:id="@+id/serial_no"
-        android:layout_width="250dp"
+        android:id="@+id/pid"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/backside"
         android:elevation="8dp"
         android:ems="10"
-        android:hint="Serial No"
-        android:inputType="textPersonName"
+        android:hint="Product ID"
+        android:inputType="number"
         android:padding="8dp"
-        android:textColorHint="@color/black"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/first_name"
-        android:layout_width="250dp"
+        android:id="@+id/pname"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/backside"
         android:elevation="8dp"
         android:ems="10"
-        android:hint="First Name"
-        android:inputType="textPersonName"
+        android:hint="Product Name"
+        android:inputType="text"
         android:padding="8dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/serial_no"
-        app:layout_constraintStart_toStartOf="@+id/serial_no"
-        app:layout_constraintTop_toBottomOf="@+id/serial_no" />
+
+        app:layout_constraintEnd_toEndOf="@+id/pid"
+        app:layout_constraintStart_toStartOf="@+id/pid"
+        app:layout_constraintTop_toBottomOf="@+id/pid" />
 
     <EditText
-        android:id="@+id/name2"
-        android:layout_width="250dp"
+        android:id="@+id/pprice"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/backside"
         android:elevation="8dp"
         android:ems="10"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
+        android:hint="Product Price"
+        android:inputType="number"
         android:padding="8dp"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/first_name"
-        app:layout_constraintStart_toStartOf="@+id/first_name"
-        app:layout_constraintTop_toBottomOf="@+id/first_name" />
+
+        app:layout_constraintEnd_toEndOf="@+id/pname"
+        app:layout_constraintStart_toStartOf="@+id/pname"
+        app:layout_constraintTop_toBottomOf="@+id/pname" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/name2"
-        app:layout_constraintStart_toStartOf="@+id/name2"
-        app:layout_constraintTop_toBottomOf="@+id/name2" />
+        android:layout_marginTop="20dp"
+        android:text="SAVE DATA"
+        app:layout_constraintEnd_toEndOf="@+id/pqtn"
+        app:layout_constraintStart_toStartOf="@+id/pqtn"
+        app:layout_constraintTop_toBottomOf="@+id/pqtn" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="SHOW DATA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="CHECK CART"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <ScrollView
-        android:layout_marginTop="30dp"
-        android:layout_width="409dp"
-        android:layout_height="393dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="25sp"
-            android:text="Hello Space"
-            android:id="@+id/showData"
-            android:textColor="@color/black"
-
-            />
-
-
-    </ScrollView>
+    <EditText
+        android:id="@+id/pqtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backside"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:hint="Product Quantity"
+        app:layout_constraintEnd_toEndOf="@+id/pprice"
+        app:layout_constraintStart_toStartOf="@+id/pprice"
+        app:layout_constraintTop_toBottomOf="@+id/pprice" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

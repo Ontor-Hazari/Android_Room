@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidRoom">
         <activity
+            android:name=".cartdata"
+            android:exported="true" />
+        <activity
             android:name=".fatchdata"
             android:exported="true" />
         <activity
